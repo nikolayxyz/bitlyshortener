@@ -1,7 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 from dotenv import load_dotenv
-load_dotenv()
 import requests
 import json
 import os
@@ -31,11 +28,12 @@ def count_clicks(token, short_url):
 
 
 if __name__ == '__main__':
+    load_dotenv()
     parser = argparse.ArgumentParser(description='Программа сокращает ссылки и считает клики в bit.ly')
     parser.add_argument('input_url',help='Вставьте ссылку')
     args = parser.parse_args()
     input_url = sys.argv[1]
-    token = os.getenv('TOKEN')
+    token = os.getenv('BITLY_TOKEN')
     if input_url.lower().startswith('bit.ly'):
         try:
             clicks_count = count_clicks(token, input_url)
