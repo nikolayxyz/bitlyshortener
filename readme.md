@@ -16,7 +16,9 @@ Python3 должен быть уже установлен. Затем испол
 
 ```TOKEN="your-token-id"```
 # Зависимости
-pip install -r requirements.txt
+Чтобы код работал корректно нужно установить завимисоит, это можно сделать так:
+
+``` pip install -r requirements.txt ```
 
 # Пример запуска из консоли:
 ```python main.py https://yandex.ru ```
