@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Программа сокращает ссылки и считает клики в bit.ly')
     parser.add_argument('input_url',help='Вставьте ссылку')
     args = parser.parse_args()
-    input_url = sys.argv[1]
+    input_url = args.input_url
     token = os.getenv('BITLY_TOKEN')
     if input_url.lower().startswith('bit.ly'):
         try:
