@@ -20,6 +20,7 @@ pip install -r requirements.txt
 
 # Пример запуска из консоли:
 ```python main.py https://yandex.ru ```
+
 ```python main.py bit.ly/111 ```
 # Цель проекта
 
