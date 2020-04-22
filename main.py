@@ -1,7 +1,5 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+
 from dotenv import load_dotenv
-load_dotenv()
 import requests
 import json
 import os
@@ -22,15 +20,16 @@ def get_bitlink(token, long_url):
 def count_clicks(token, short_url):
     headers = {'Authorization': token}
     params = {'units': -1}
-    URL = \
+    url = \
         'https://api-ssl.bitly.com/v4/bitlinks/{}/clicks/summary'.format(short_url)
-    response = requests.get(URL, headers=headers, params=params)
+    response = requests.get(url, headers=headers, params=params)
     response.raise_for_status()
     bitlink_response = response.json()
     return bitlink_response['total_clicks']
 
 
 if __name__ == '__main__':
+    load_dotenv()
     parser = argparse.ArgumentParser(description='Программа сокращает ссылки и считает клики в bit.ly')
     parser.add_argument('input_url',help='Вставьте ссылку')
     args = parser.parse_args()
